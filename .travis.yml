@@ -1,0 +1,34 @@
+language: java
+env:
+  matrix:
+    - SOLR_VERSION=3.1.0
+    - SOLR_VERSION=3.2.0
+    - SOLR_VERSION=3.3.0
+    - SOLR_VERSION=3.4.0
+    - SOLR_VERSION=3.5.0
+    - SOLR_VERSION=3.6.0
+    - SOLR_VERSION=3.6.1
+    - SOLR_VERSION=3.6.2
+    - SOLR_VERSION=4.0.0
+    - SOLR_VERSION=4.1.0
+    - SOLR_VERSION=4.2.0
+    - SOLR_VERSION=4.2.1
+    - SOLR_VERSION=4.3.0
+    - SOLR_VERSION=4.3.1
+    - SOLR_VERSION=4.4.0
+    - SOLR_VERSION=4.5.0
+    - SOLR_VERSION=4.5.1
+    - SOLR_VERSION=4.6.0
+    - SOLR_VERSION=4.6.1
+    - SOLR_VERSION=4.7.0
+    - SOLR_VERSION=4.7.1
+    - SOLR_VERSION=4.7.2
+    - SOLR_VERSION=4.8.0
+    - SOLR_VERSION=4.8.1
+    - SOLR_VERSION=4.9.0
+jdk:
+  - openjdk6
+  - openjdk7
+  - oraclejdk7
+install: "mvn -DskipTests=true -Dsolr.version=${SOLR_VERSION} install"
+script: "mvn -Dsolr.version=${SOLR_VERSION} install"
