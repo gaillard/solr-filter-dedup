@@ -12,7 +12,7 @@ public final class DedupFilter extends TokenFilter {
     private final CharTermAttribute termAttribute = addAttribute(CharTermAttribute.class);
     private final CharArraySet seenTerms = new CharArraySet(Version.LUCENE_31, 8, false);
 
-    protected DedupFilter(TokenStream input) {
+    protected DedupFilter(final TokenStream input) {
         super(input);
     }
 
@@ -23,7 +23,7 @@ public final class DedupFilter extends TokenFilter {
             final int length = termAttribute.length();
 
             // clone the term, and add to the set of seen terms.
-            char[] termClone = new char[length];
+            final char[] termClone = new char[length];
             System.arraycopy(term, 0, termClone, 0, length);
             if (seenTerms.add(termClone)) {
                 return true;

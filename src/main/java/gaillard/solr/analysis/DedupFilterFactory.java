@@ -10,7 +10,7 @@ public class DedupFilterFactory extends TokenFilterFactory {
         super(args);
     }
 
-    public TokenStream create(TokenStream ts) {
+    public TokenStream create(final TokenStream ts) {
         return new DedupFilter(ts);
     }
 }
